@@ -11,7 +11,7 @@ def set_bg(image_file):
     with open(image_file, "rb") as img:
         encoded = base64.b64encode(img.read()).decode()
 
-    st.markdown(f"""
+    css = f"""
     <style>
 
     .stApp {{
@@ -23,12 +23,10 @@ def set_bg(image_file):
         background-attachment: fixed;
     }}
 
-    /* Text */
     body, p, div {{
         color: white;
     }}
 
-    /* Glass Cards */
     .card {{
         background: rgba(255,255,255,0.05);
         backdrop-filter: blur(15px);
@@ -45,7 +43,6 @@ def set_bg(image_file):
         box-shadow: 0 0 25px rgba(0,247,255,0.6);
     }}
 
-    /* Title */
     .main-title {{
         text-align: center;
         font-size: 60px;
@@ -61,7 +58,6 @@ def set_bg(image_file):
         margin-bottom: 40px;
     }}
 
-    /* Button */
     div.stButton > button {{
         background: linear-gradient(90deg, #00f7ff, #0051ff);
         color: white;
@@ -79,8 +75,8 @@ def set_bg(image_file):
         box-shadow: 0 0 30px rgba(0,247,255,0.9);
     }}
 
-    /* 📱 MOBILE RESPONSIVENESS (ADDED ONLY THIS PART) */
-    @media (max-width: 768px) {
+    /* 📱 MOBILE RESPONSIVENESS */
+    @media (max-width: 768px) {{
 
         .main-title {{
             font-size: 34px !important;
@@ -102,15 +98,14 @@ def set_bg(image_file):
         }}
 
         .block-container {{
-            padding-top: 1rem !important;
-            padding-bottom: 1rem !important;
-            padding-left: 1rem !important;
-            padding-right: 1rem !important;
+            padding: 1rem !important;
         }}
-    }
+    }}
 
     </style>
-    """, unsafe_allow_html=True)
+    """
+
+    st.markdown(css, unsafe_allow_html=True)
 
 # ---------------- APPLY BACKGROUND ----------------
 set_bg("heart.png")
