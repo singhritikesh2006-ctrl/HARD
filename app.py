@@ -79,6 +79,36 @@ def set_bg(image_file):
         box-shadow: 0 0 30px rgba(0,247,255,0.9);
     }}
 
+    /* 📱 MOBILE RESPONSIVENESS (ADDED ONLY THIS PART) */
+    @media (max-width: 768px) {
+
+        .main-title {{
+            font-size: 34px !important;
+        }}
+
+        .subtitle {{
+            font-size: 16px !important;
+        }}
+
+        .card {{
+            padding: 20px !important;
+            margin-bottom: 15px !important;
+        }}
+
+        div.stButton > button {{
+            width: 100% !important;
+            font-size: 16px !important;
+            padding: 10px !important;
+        }}
+
+        .block-container {{
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }}
+    }
+
     </style>
     """, unsafe_allow_html=True)
 
